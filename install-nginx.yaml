@@ -1,0 +1,16 @@
+- name: installing nginx
+  hosts: localhost
+  become: yes #root access
+  tasks: 
+  - name: Install nginx
+    ansible.builtin.package:  #gathering facts understands the package as dnf for redhat automatically
+      name: nginx
+      state: present
+
+  - name: Start service nginx, if not started
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
+  
+

@@ -1,0 +1,19 @@
+- name: play level variables
+  hosts: localhost
+  connection: local 
+  vars:
+    course: "Ansible"
+    duration: "2 months"
+    trainer: "neelima"
+  #vars_files:
+  # - coursedetails.yaml
+
+  tasks:
+  - name: print variables
+    vars:
+      course: "Ansible" #tasks level variable will override play level variable
+      duration: "2 months"
+      trainer: "neelima" 
+    ansible.builtin.debug:
+      msg: "Course is {{ course }} and duration is {{ duration }} and trainer is {{ trainer }}"
+  
