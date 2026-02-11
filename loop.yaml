@@ -20,4 +20,15 @@
         - nginx
         - nodejs
 
+# learning loop with dictionary
+    - name: print a list of items
+      ansible.builtin.debug:
+        msg: "fruit is {{ item.key }} and its color is {{ item.value }}"
+      loop:
+        - { key: apple, value: red }
+        - { key: orange, value: orange }
+        - { key: mango, value: yellow }
+
+        
+
       
