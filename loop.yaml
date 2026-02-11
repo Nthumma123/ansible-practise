@@ -9,3 +9,15 @@
         - apple
         - orange
         - mango
+
+#Used while installing some list of packages
+    - name: install some packages
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - git
+        - nginx
+        - nodejs
+
+      
