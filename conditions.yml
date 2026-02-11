@@ -1,0 +1,14 @@
+- name: gathering facts
+  hosts: local
+  connection: local
+  tasks:
+    - name: print facts
+      ansible.builtin.debug:
+        msg: "facts are {{ ansible_facts }}"
+    - name : usage of conditions
+      ansible.builtin.debug:
+        msg: "yes, package manager is REDHAT"
+      when: ansible_facts.os_family == 'Redhat' #executes the tasks when the condition is true
+
+
+
