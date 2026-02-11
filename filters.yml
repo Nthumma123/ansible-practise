@@ -1,0 +1,51 @@
+- name: demo on filters
+  hosts: local
+  connection: local
+  tasks:
+    - name: print a message in uppercase
+      ansible.builtin.debug:
+        msg: "{{ 'hello world' | upper }}"
+
+    - name: print a message in lowercase
+      ansible.builtin.debug:
+        msg: "{{ 'HELLO WORLD' | lower }}"
+
+    - name: print a message with title case
+      ansible.builtin.debug:
+        msg: "{{ 'hello world' | title }}"
+
+    - name: print a message with default value
+      ansible.builtin.debug:
+        msg: "{{ undefined_variable | default('default value') }}"
+
+
+    - name: print a message with length of a string
+      ansible.builtin.debug:    
+        msg: "{{ 'hello world' | length }}"
+    - name: print a message with reverse of a string
+      ansible.builtin.debug:    
+        msg: "{{ 'hello world' | reverse }}"
+
+    - name: print a message with split of a string
+      ansible.builtin.debug:    
+        msg: "{{ 'hello world' | split(' ') }}"
+
+    - name: print a message with join of a list
+      ansible.builtin.debug:
+        msg: "{{ ['hello', 'world'] | join(' ') }}"
+
+    - name: print a message with unique filter
+      ansible.builtin.debug:
+        msg: "{{ [1, 2, 3, 4, 4, 5] | unique }}"
+    - name: print a message with sort filter
+      ansible.builtin.debug:
+        msg: "{{ [5, 3, 1, 4, 2] | sort }}" 
+    
+    - name: print a message with random filter
+      ansible.builtin.debug:
+        msg: "{{ [1, 2, 3, 4, 5] | random }}"
+    - name: print a message with default value when variable is undefined
+      ansible.builtin.debug:    
+        msg: "{{ undefined_variable | default('default value') }}"
+
+    

@@ -5,7 +5,7 @@
     - name: print a list of items
       ansible.builtin.debug:
         msg: "fruit is {{ item }}"
-      loop: 
+      loop:  # list of string
         - apple
         - orange
         - mango
@@ -20,7 +20,7 @@
         - nginx
         - nodejs
 
-# learning loop with dictionary
+# learning loop with dictionary #list of map
     - name: print a list of items
       ansible.builtin.debug:
         msg: "fruit is {{ item.key }} and its color is {{ item.value }}"
@@ -29,6 +29,6 @@
         - { key: orange, value: orange }
         - { key: mango, value: yellow }
 
-        
+
 
       
