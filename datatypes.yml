@@ -1,0 +1,18 @@
+- name : demo on datatypes
+  hosts : localhost
+  tasks :
+    - name : demo on string
+      debug :
+        msg : "hello world"
+
+    - name : demo on integer
+      debug :
+        msg : "{{ 10 + 20 }}"
+
+    - name : demo on list
+      debug :
+        msg : "{{ ['a', 'b', 'c'] }}"
+
+    - name : demo on dictionary
+      debug :
+        msg : "{{ {'name': 'ansible', 'version': '2.9'} }}"
