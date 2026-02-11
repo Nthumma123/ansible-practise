@@ -1,0 +1,12 @@
+- name: ansible command and shell modules
+  hosts: local
+  connection: local
+  tasks: 
+    - name: using command module
+      ansible.builtin.command:  # |,  > these do not work in command module
+        cmd: "ls -l /tmp"
+        register: list_of_files
+
+    - name: using shell module
+      ansible.builtin.shell:
+        cmd: "ls -l /tmp | grep ansible"
