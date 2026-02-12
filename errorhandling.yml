@@ -14,3 +14,11 @@
     - name: create user 
       ansible.builtin.command: useradd roboshop
       when: user_output.rc != 0 #executes the task when the condition is true
+
+      # ansible-playbook -i inventory.ini errrhandling.yml
+
+      #command module doent help with IDEMPOTENCY in ansible
+
+      #when collections are available use it ..if not present use shell/command module and handle the error with when condition
+
+      
