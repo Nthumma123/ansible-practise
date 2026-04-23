@@ -19,15 +19,15 @@
       msg: "Course is {{ course }} and duration is {{ duration }} and trainer is {{ trainer }}"
   
 
-  tasks:
-  - name: prompt variables
-    ansible.builtin.prompt:
-      name: "course"
-      prompt: "Enter the course name"
-      private: no         #not confidentail
-    register: course_name #saves in course_name variable
+  # tasks:
+  # - name: prompt variables
+  #   ansible.builtin.prompt:
+  #     name: "course"
+  #     prompt: "Enter the course name"
+  #     private: no         #not confidentail
+  #   register: course_name #saves in course_name variable
 
-  - name: print prompted variable
-    ansible.builtin.debug:
-      msg: "Course name is {{ course_name }}"
+  # - name: print prompted variable
+  #   ansible.builtin.debug:
+  #     msg: "Course name is {{ course_name }}"
 
