@@ -1,0 +1,14 @@
+- name: Learn varibales for ansible
+  hosts: localhost
+  connection: localhost
+  become: true
+  vars:
+    course: "ansible"
+    project: "learning"
+
+  tasks:
+   - name: print the varibales
+    ansible.builtin.debug:
+      msg: "I am learning {{ course }} for {{ project }}"
+
+      
