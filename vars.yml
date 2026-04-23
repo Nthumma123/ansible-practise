@@ -1,6 +1,7 @@
 - name: play level variables
   hosts: localhost
   connection: local 
+  become: true
   vars:
     course: "Ansible"
     duration: "2 months"
