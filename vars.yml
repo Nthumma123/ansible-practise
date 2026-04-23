@@ -1,3 +1,4 @@
+---
 - name: play level variables
   hosts: localhost
   connection: local 
@@ -14,20 +15,8 @@
     vars:
       course: "Ansible" #tasks level variable will override play level variable
       duration: "2 months"
-      trainer: "neelima" 
+      trainer: "xyz" 
     ansible.builtin.debug:
       msg: "Course is {{ course }} and duration is {{ duration }} and trainer is {{ trainer }}"
   
-
-  # tasks:
-  # - name: prompt variables
-  #   ansible.builtin.prompt:
-  #     name: "course"
-  #     prompt: "Enter the course name"
-  #     private: no         #not confidentail
-  #   register: course_name #saves in course_name variable
-
-  # - name: print prompted variable
-  #   ansible.builtin.debug:
-  #     msg: "Course name is {{ course_name }}"
 
