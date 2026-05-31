@@ -8,7 +8,7 @@
 
   tasks:
    - name: print the varibales
-    ansible.builtin.debug:
+     ansible.builtin.debug:
       msg: "I am learning {{ course }} for {{ project }}"
 
       
